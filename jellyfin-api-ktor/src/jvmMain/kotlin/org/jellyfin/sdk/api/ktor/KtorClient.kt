@@ -135,7 +135,7 @@ public class KtorClient(
 		builder.sslSocketFactory(sslContext.socketFactory, trustManager)
 	}
 
-	override fun update(baseUrl: String?, accessToken: String?, clientInfo: ClientInfo, deviceInfo: DeviceInfo, mtls: KeyStore.PrivateKeyEntry?) {
+	override fun update(baseUrl: String?, accessToken: String?, clientInfo: ClientInfo, deviceInfo: DeviceInfo, mtls: KeyStore.PrivateKeyEntry? = null) {
 		this.baseUrl = baseUrl
 		this.accessToken = accessToken
 		this.clientInfo = clientInfo
