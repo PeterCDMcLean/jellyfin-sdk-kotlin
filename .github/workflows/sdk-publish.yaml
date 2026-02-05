@@ -7,6 +7,7 @@ on:
     branches:
       - master
       - openapi-unstable
+  workflow_dispatch:
 
 jobs:
   publish:
