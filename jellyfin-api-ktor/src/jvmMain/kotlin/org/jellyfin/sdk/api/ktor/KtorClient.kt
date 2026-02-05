@@ -135,7 +135,7 @@ public class KtorClient(
 		builder.sslSocketFactory(sslContext.socketFactory, trustManager)
 	}
 
-	override fun update(baseUrl: String?, accessToken: String?, clientInfo: ClientInfo, deviceInfo: DeviceInfo, mtls: KeyStore.PrivateKeyEntry? = null) {
+	override fun update(baseUrl: String?, accessToken: String?, clientInfo: ClientInfo, deviceInfo: DeviceInfo, mtls: KeyStore.PrivateKeyEntry?) {
 		this.baseUrl = baseUrl
 		this.accessToken = accessToken
 		this.clientInfo = clientInfo
@@ -146,6 +146,10 @@ public class KtorClient(
 		if (_webSocket.isInitialized()) {
 			_webSocket.value.notifyApiClientUpdate()
 		}
+	}
+	
+	override fun update(baseUrl: String?, accessToken: String?, clientInfo: ClientInfo, deviceInfo: DeviceInfo) {
+		update(baseUrl, accessToken, clientInfo, deviceInfo, null)
 	}
 
 	@Suppress("ThrowsCount")
