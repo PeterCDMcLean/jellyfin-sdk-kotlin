@@ -147,10 +147,6 @@ public class KtorClient(
 			_webSocket.value.notifyApiClientUpdate()
 		}
 	}
-	
-	override fun update(baseUrl: String?, accessToken: String?, clientInfo: ClientInfo, deviceInfo: DeviceInfo) {
-		update(baseUrl, accessToken, clientInfo, deviceInfo, null)
-	}
 
 	@Suppress("ThrowsCount")
 	public override suspend fun request(
